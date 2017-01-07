@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "adeattwood\\yii2\\datetimepicker\\": "yii2-ui-date-time-picker/"
+            "adeattwood\\yii2\\datetimepicker\\": ""
         }
     },
     "config": {
