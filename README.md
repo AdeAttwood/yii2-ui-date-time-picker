@@ -6,7 +6,9 @@ This widget uses timepicker addon for jQuery UI [Datepicker](http://trentrichard
 ## Installation
 
 - - -
-TODO
+~~~
+composer require adeattwood/yii2-ui-date-time-picker
+~~~
 
 ## Usage
 
