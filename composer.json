@@ -1,0 +1,26 @@
+{
+    "name": "adeattwood/yii2-ui-date-time-picker",
+    "description": "Yii 2 Date time picker useing jquery ui and the timepicker addon",
+    "keywords": ["yii2", "date", "time", "picker", "widget"],
+    "type": "yii2-extension",
+    "authors": [
+        {
+            "name": "Ade Attwood",
+            "email": "attwood16@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.5",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "bower-asset/jqueryui-timepicker-addon": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "adeattwood\\yii2\\datetimepicker\\": "yii2-ui-date-time-picker/"
+        }
+    },
+    "config": {
+        "process-timeout": 1800
+    }
+}
