@@ -2,7 +2,7 @@
 /**
  * Description of UiDateTimePicker
  *
- * @author ade
+ * @author Ade Attwood
  */
 
 namespace  adeattwood\yii2\datetimepicker;
@@ -13,10 +13,9 @@ use yii\helpers\Json;
 
 class UiDateTimePicker extends \yii\widgets\InputWidget
 {
-    public $datePickerOptions = [];
-    
-    public $options = ['class' =>  'form-control'];
 
+    public $datePickerOptions = [];
+    public $options = ['class' => 'form-control'];
 
     public function init()
     {
@@ -24,29 +23,32 @@ class UiDateTimePicker extends \yii\widgets\InputWidget
         $this->registerAssets();
         echo $this->renderInput();
     }
-    
-     public function run()
+
+    public function run()
     {
         parent::run();
     }
-    
+
     private function renderInput()
     {
         if ($this->hasModel()) {
             $input = Html::activeTextInput($this->model, $this->attribute, $this->options);
         } else {
-            $input = Html::textArea($this->name, $this->value, $this->options);
+            $input = Html::textInput($this->name, $this->value, $this->options);
         }
-        
+
         return $input;
     }
-    
-    public function registerAssets() 
+
+    public function registerAssets()
     {
-        $datePickerOptions = Json::encode($this->datePickerOptions);
         $view = $this->getView();
-         $js = 'jQuery(window).load(function(){jQuery(\'#' . $this->options['id'] . '\').datetimepicker('. $datePickerOptions .');});'; 
+
+        UiDateTimePickerAsset::register($view);
+
+        $datePickerOptions = Json::encode($this->datePickerOptions);
+        $js  = 'jQuery(window).load(function(){jQuery(\'#' . $this->options['id'] . '\').datetimepicker(' . $datePickerOptions . ');});';
         $view->registerJs($js);
     }
-    
+
 }

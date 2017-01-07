@@ -1,30 +1,28 @@
 <?php
-
-namespace app\widgets\UiDateTimePicker;
-
-use yii\web\AssetBundle;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of UiDateTimePickerAsset
  *
- * @author ade
+ * @author Ade Attwood
  */
+
+namespace adeattwood\yii2\datetimepicker;
+
+use yii\web\AssetBundle;
+
 class UiDateTimePickerAsset extends AssetBundle
 {
-   public $css = [
-        'css/site.css',
+
+    public $sourcePath = '@bower';
+    public $css  = [
+        "jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.css"
     ];
-    public $js = [
+    public $js  = [
+        "jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.js",
+        "jqueryui-timepicker-addon/dist/jquery-ui-sliderAccess.js"
     ];
     public $depends = [
-        'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'yii\jui\JuiAsset'
     ];
+
 }
